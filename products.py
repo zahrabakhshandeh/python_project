@@ -58,6 +58,15 @@ for i in range(100):
         print(f"{new_name} : already exists!")
     else:
       print(f"{old_name}: not found!")
+  elif answer == "search":
+    name = input("product name: ")
+    if name in product_names:
+      ind = product_names.index(name)
+      bought = product_is_bought[ind]
+      price = product_prices[ind]
+      print(f"{name} ==> bought: {bought}, price: {price}")
+    else:
+      print(f"{name} : not found!")
   elif answer == "details":
     total = len(product_names)
     not_purchased = product_is_bought.count(False)
